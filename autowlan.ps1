@@ -32,3 +32,7 @@ if((get-netadapter -Name "WLAN").Status.ToLower() -eq "up")
 {
     $connectionStatus = [ConnectionStatusType]::Connected
 }
+else 
+{
+    netsh wlan connect name=$profileName
+}
